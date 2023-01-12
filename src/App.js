@@ -1,4 +1,17 @@
+import React from "react";
 import "./App.css";
+
+class Quote extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      quote: {},
+    };
+  }
+  render() {
+    return <h1>Swag</h1>;
+  }
+}
 
 function App() {
   fetch("https://type.fit/api/quotes")
@@ -13,6 +26,7 @@ function App() {
     <div className="App">
       <div className="header">
         <h1>Random Quote Generator</h1>
+        <Quote />
       </div>
     </div>
   );

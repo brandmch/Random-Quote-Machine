@@ -18,6 +18,10 @@ const randomColor = () => {
   return `linear-gradient(to bottom right, rgb(${randomValue()}, ${randomValue()}, ${randomValue()}), rgb(255, 255, 255))`;
 };
 
+const getTweetStr = (state) => {
+  return `"${state.quote.text}" -${state.quote.author}`;
+};
+
 const App = () => {
   const [state, setState] = useState({ backgroundColor: "", quote: {} });
   const [refresh, setRefresh] = useState(false);
@@ -47,15 +51,26 @@ const App = () => {
           <p className="author" id="author">
             -{state.quote.author}
           </p>
-          <button
-            className="button"
-            id="new-quote"
-            onClick={() => {
-              setRefresh(!refresh);
-            }}
-          >
-            New Quote
-          </button>
+          <div className="button-container">
+            <button
+              className="button"
+              id="new-quote"
+              onClick={() => {
+                setRefresh(!refresh);
+              }}
+            >
+              New Quote
+            </button>
+            <i
+              class="fa fa-twitter"
+              onClick={() => {
+                window.open(
+                  `https://twitter.com/intent/tweet?text=${getTweetStr(state)}`,
+                  "_blank"
+                );
+              }}
+            ></i>
+          </div>
         </div>
       </div>
     );

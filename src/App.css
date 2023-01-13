@@ -39,11 +39,16 @@
 }
 
 .button-container {
-  align-items: flex-start;
+  width: 100%;
+  display: flex;
+  margin-top: 1rem;
 }
 
-.button {
-  margin-top: 3rem;
+.blank-button-start {
+  flex: 4;
+}
+
+.new-quote-button {
   font-family: "Raleway", sans-serif;
   padding: 12px 17px;
   background-color: #fff;
@@ -51,14 +56,20 @@
   box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
   font-size: 1rem;
+  flex: 2;
 }
 
-.button:active {
+.new-quote-button:active {
   box-shadow: 0.5px 0.5px 0px 0px rgba(0, 0, 0, 0.25);
 }
 
+.blank-button-end {
+  flex: 3;
+}
+
 .fa {
-  font-size: 3rem;
+  font-size: 2.75rem;
+  flex: 1;
 }
 
 .lds-ripple {

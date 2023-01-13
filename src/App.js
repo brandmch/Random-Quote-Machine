@@ -15,7 +15,7 @@ const randomColor = () => {
   function randomValue() {
     return Math.floor(Math.random() * 256);
   }
-  return `linear-gradient(to bottom right, rgb(${randomValue()}, ${randomValue()}, ${randomValue()}), rgb(255, 255, 255))`;
+  return `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`;
 };
 
 const getTweetStr = (state) => {
@@ -42,7 +42,9 @@ const App = () => {
       <div
         className="App"
         id="quote-box"
-        style={{ backgroundImage: state.backgroundColor }}
+        style={{
+          backgroundImage: `linear-gradient(to bottom right, ${state.backgroundColor}, rgb(255, 255, 255))`,
+        }}
       >
         <div className="header">
           <p className="quote" id="text">
@@ -52,8 +54,9 @@ const App = () => {
             -{state.quote.author}
           </p>
           <div className="button-container">
+            <div className="blank-button-start"></div>
             <button
-              className="button"
+              className="new-quote-button"
               id="new-quote"
               onClick={() => {
                 setRefresh(!refresh);
@@ -61,8 +64,10 @@ const App = () => {
             >
               New Quote
             </button>
+            <div className="blank-button-end"></div>
             <i
-              class="fa fa-twitter"
+              className="fa fa-twitter"
+              style={{ color: state.backgroundColor }}
               onClick={() => {
                 window.open(
                   `https://twitter.com/intent/tweet?text=${getTweetStr(state)}`,

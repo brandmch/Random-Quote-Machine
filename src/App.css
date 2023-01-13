@@ -6,7 +6,7 @@
   color: #000000;
   justify-content: center;
   align-items: center;
-  font-family: "Roboto", sans-serif;
+  font-family: "Raleway", sans-serif;
 }
 
 .header {
@@ -16,40 +16,37 @@
   flex-direction: column;
   background-color: #ffffff;
   border-radius: 10px;
-  padding: 25px;
+  padding: 30px;
   box-shadow: 7px 7px rgba(0, 0, 0, 0.1);
   animation: header-fadeIn 3s;
 }
 
 @keyframes header-fadeIn {
   0% {
-    opacity: 0;
+    opacity: 0.01;
   }
   100% {
     opacity: 1;
   }
 }
 
-.head {
-  margin-bottom: 3rem;
-}
-
 .quote {
-  font-size: large;
+  font-size: 2rem;
 }
 
 .author {
-  font-size: medium;
+  font-size: 1.5rem;
 }
 
 .button {
   margin-top: 3rem;
-  font-family: "Roboto", sans-serif;
-  padding: 10px 15px;
+  font-family: "Raleway", sans-serif;
+  padding: 12px 17px;
   background-color: #fff;
   border: none;
   box-shadow: 0.5px 0.5px 1px 1px rgba(0, 0, 0, 0.25);
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .button:active {

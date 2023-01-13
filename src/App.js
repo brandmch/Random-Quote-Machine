@@ -41,7 +41,6 @@ const App = () => {
         style={{ backgroundImage: state.backgroundColor }}
       >
         <div className="header">
-          <h1 className="head">Random Quote Generator</h1>
           <p className="quote" id="text">
             "{state.quote.text}"
           </p>
@@ -62,7 +61,7 @@ const App = () => {
     );
   } else {
     return (
-      <div class="lds-ripple">
+      <div className="lds-ripple">
         <div></div>
         <div></div>
       </div>

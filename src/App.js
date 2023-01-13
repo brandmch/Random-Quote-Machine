@@ -11,15 +11,6 @@ const randomQuote = async () => {
     });
 };
 
-const Quote = (props) => {
-  return (
-    <div>
-      <p className="quote">"{props.quote.text}"</p>
-      <p>-{props.quote.author}</p>
-    </div>
-  );
-};
-
 const App = () => {
   const [quote, setQuote] = useState({});
 
@@ -27,12 +18,16 @@ const App = () => {
     randomQuote().then((res) => setQuote(res));
   }, []);
 
+  console.log(quote);
+
   return (
     <div className="App">
       <div className="header">
-        <h1>Random Quote Generator</h1>
-        <Quote quote={quote} />
+        <h1 className="head">Random Quote Generator</h1>
+        <p className="quote">"{quote.text}"</p>
+        <p className="author">-{quote.author}</p>
         <button
+          className="button"
           onClick={() => {
             randomQuote().then((res) => setQuote(res));
           }}

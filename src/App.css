@@ -6,23 +6,29 @@
   color: #ffffff;
   justify-content: center;
   align-items: center;
+  font-family: "Roboto", sans-serif;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header {
+  max-width: 65%;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;
+  /* border: 2px solid black; */
 }
 
-.App-link {
-  color: #61dafb;
+.head {
+  margin-bottom: 3rem;
 }
 
 .quote {
   font-size: large;
+}
+
+.author {
+  font-size: medium;
+}
+
+.button {
+  margin-top: 3rem;
 }

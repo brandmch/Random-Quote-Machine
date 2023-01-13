@@ -42,7 +42,7 @@ const App = () => {
     });
   }, [refresh]);
 
-  if (state.backgroundColor !== "") {
+  if (state.backgroundColor !== "" && Object.keys(state.quote).length > 0) {
     return (
       <div
         className="App"

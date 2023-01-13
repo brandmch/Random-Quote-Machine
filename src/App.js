@@ -11,6 +11,13 @@ const randomQuote = async () => {
     });
 };
 
+const randomColor = () => {
+  function randomValue() {
+    return Math.floor(Math.random() * 256);
+  }
+  return `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`;
+};
+
 const App = () => {
   const [quote, setQuote] = useState({});
 
@@ -21,13 +28,22 @@ const App = () => {
   console.log(quote);
 
   return (
-    <div className="App">
+    <div
+      className="App"
+      id="quote-box"
+      style={{ backgroundColor: randomColor() }}
+    >
       <div className="header">
         <h1 className="head">Random Quote Generator</h1>
-        <p className="quote">"{quote.text}"</p>
-        <p className="author">-{quote.author}</p>
+        <p className="quote" id="text">
+          "{quote.text}"
+        </p>
+        <p className="author" id="author">
+          -{quote.author}
+        </p>
         <button
           className="button"
+          id="new-quote"
           onClick={() => {
             randomQuote().then((res) => setQuote(res));
           }}

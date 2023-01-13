@@ -9,6 +9,7 @@
   font-family: "Raleway", sans-serif;
 }
 
+/* Main Display */
 .header {
   width: 65%;
   display: flex;
@@ -72,6 +73,7 @@
   flex: 1;
 }
 
+/* Loading Animation */
 .lds-ripple {
   display: inline-block;
   position: relative;

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
 
+// Grabs array of quotes from API. Returns 1 random quote from the array.
 const randomQuote = async () => {
   return await fetch("https://type.fit/api/quotes")
     .then((response) => {
@@ -11,6 +12,8 @@ const randomQuote = async () => {
     });
 };
 
+// Returns a random color in rgba()
+// Used for state.backgroundColor
 const randomColor = () => {
   function randomValue() {
     return Math.floor(Math.random() * 256);
@@ -18,17 +21,19 @@ const randomColor = () => {
   return `rgb(${randomValue()}, ${randomValue()}, ${randomValue()})`;
 };
 
+// Turns the current quote in state into a string for Twitter http
 const getTweetStr = (state) => {
   return `"${state.quote.text}" -${state.quote.author}`;
 };
 
+// Main App
 const App = () => {
   const [state, setState] = useState({ backgroundColor: "", quote: {} });
   const [refresh, setRefresh] = useState(false);
 
+  // On load, and on refresh, generate random quote and random color
   useEffect(() => {
     randomQuote().then((res) => {
-      console.log(res.author);
       const quote = { ...res };
       if (quote.author === null) {
         quote.author = "Anonymous";

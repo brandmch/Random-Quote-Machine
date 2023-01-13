@@ -23,9 +23,14 @@ const App = () => {
   const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
-    randomQuote().then((res) =>
-      setState({ quote: res, backgroundColor: randomColor() })
-    );
+    randomQuote().then((res) => {
+      console.log(res.author);
+      const quote = { ...res };
+      if (quote.author === null) {
+        quote.author = "Anonymous";
+      }
+      setState({ quote: quote, backgroundColor: randomColor() });
+    });
   }, [refresh]);
 
   if (state.backgroundColor !== "") {
@@ -50,7 +55,7 @@ const App = () => {
               setRefresh(!refresh);
             }}
           >
-            NewQ
+            New Quote
           </button>
         </div>
       </div>
